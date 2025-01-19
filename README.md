@@ -1,1 +1,1 @@
-# teen_adhd-app
+# teen_adhd_assistant
