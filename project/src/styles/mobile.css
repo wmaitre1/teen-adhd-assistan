@@ -1,0 +1,19 @@
+@layer utilities {
+  .touch-action-none {
+    touch-action: none;
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-nav-height {
+    height: calc(100vh - 4rem);
+  }
+}

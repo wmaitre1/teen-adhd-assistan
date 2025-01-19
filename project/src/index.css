@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 247 244;
+    --foreground: 26 26 26;
+    --primary: 229 43 80;
+    --primary-foreground: 255 244 244;
+    --secondary: 255 243 176;
+    --secondary-foreground: 26 26 26;
+    --muted: 241 241 241;
+    --muted-foreground: 115 115 115;
+    --accent: 229 43 80;
+    --accent-foreground: 255 244 244;
+    --card: 255 255 255;
+    --card-foreground: 26 26 26;
+  }
+
+  .dark {
+    --background: 17 24 39;
+    --foreground: 255 244 244;
+    --primary: 229 43 80;
+    --primary-foreground: 255 244 244;
+    --secondary: 255 243 176;
+    --secondary-foreground: 26 26 26;
+    --muted: 38 38 38;
+    --muted-foreground: 186 186 186;
+    --accent: 229 43 80;
+    --accent-foreground: 255 244 244;
+    --card: 38 38 38;
+    --card-foreground: 255 244 244;
+  }
+
+  html {
+    font-family: 'Lato', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-foreground font-bold;
+  }
+
+  p {
+    @apply text-foreground;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-colors px-4 py-2 rounded-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-colors px-4 py-2 rounded-lg;
+  }
+
+  .mobile-nav {
+    @apply fixed bottom-0 left-0 right-0 bg-card border-t border-muted p-4 md:hidden safe-bottom;
+  }
+
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.primary.DEFAULT') theme('colors.gray.100');
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: theme('colors.gray.100');
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: theme('colors.primary.DEFAULT');
+    border-radius: 4px;
+    border: 2px solid theme('colors.gray.100');
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: theme('colors.primary.600');
+  }
+}
+
+@layer utilities {
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
